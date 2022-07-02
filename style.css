@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    color: #ffffff;
+}
+
+.background-element::after {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    content: '';
+    top: 0;
+    position: absolute;
+    z-index: -2;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    width: 70%;
+    max-width: 600px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0000006e;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.header {
+    display: flex;
+    width: 90%;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.header>h1 {
+    margin: 0 auto;
+}
+
+.show {
+    pointer-events: initial !important;
+    opacity: 1 !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.input-box,
+.input-box-edit {
+    width: 70%;
+    max-width: 600px;
+    height: 60vh;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    position: absolute;
+    z-index: 3;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0000006e;
+    border-radius: 30px;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.input-box>div,
+.input-box-edit>div {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.input-box-edit input,
+.input-box-edit textarea,
+.input-box input,
+.input-box textarea {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    resize: vertical;
+    max-height: 280px;
+    margin: 0.7rem 0;
+    outline: none;
+    border: none;
+    color: #ffffff;
+    border-radius: 22px;
+    background: transparent;
+    border: 2px solid #ffffff;
+    font-size: 18px;
+}
+
+.input-box-edit .form-btns,
+.input-box .form-btns {
+    display: flex;
+    gap: 5px;
+}
+
+.input-box-edit button,
+.input-box button {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 0.4rem;
+    outline: none;
+    border-radius: 20px;
+    width: 100%;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.add-btn {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 0 0.7rem;
+    outline: none;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.add-btn>i {
+    pointer-events: none;
+}
+
+.task-list {
+    padding: 1rem 1rem;
+    margin: 1rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+}
+
+.task-inp::placeholder {
+    color: #ccccccbe;
+}
+
+.task-item {
+    font-size: 1.3rem;
+    list-style: none;
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.task-item li {
+    border-radius: 22px;
+    background-color: #0000001f;
+    border: 2px solid #ffffff;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.task-text>p:first-child {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.task-text>p:last-child {
+    font-size: 1.2rem;
+}
+
+.div-icons>i {
+    color: #ffffff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 0.4rem;
+}
+
+.div-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.checked {
+    text-decoration-line: line-through;
+    opacity: 0.5;
+}
+
+@media (max-width: 568px) {
+    .card {
+        width: 90%;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #3f3f3f;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(184, 184, 184);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(175, 142, 142);
+}
